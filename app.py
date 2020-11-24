@@ -3,17 +3,22 @@ from fastapi.responses import JSONResponse
 
 import logging
 import time
+import os
 
 from lib.translator import Translator
 from lib.logger import set_logger
+
+from dotenv import load_dotenv
+load_dotenv()
 
 set_logger()
 
 setup_start = time.time()
 app = FastAPI()
 
-API_TOKEN = "token123"
-mname = "Helsinki-NLP/opus-mt-en-roa"
+API_TOKEN = os.getenv("TOKEN")
+mname = os.getenv("MODEL_NAME")
+
 translator = Translator(mname)
 
 setup_end = time.time()

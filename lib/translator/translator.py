@@ -1,6 +1,7 @@
 from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
 import time
 
+
 class Translator:
     def __init__(self,
                  mname="Helsinki-NLP/opus-mt-en-roa"):

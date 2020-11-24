@@ -1,2 +1,0 @@
-classe para abstrair "tradutor"
-objetivo: ser instanciado dado nome de modelo da HF. Depois, recebe uma string e devolve a tradução, no torch involved

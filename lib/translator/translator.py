@@ -8,8 +8,8 @@ class Translator:
         self.model = AutoModelForSeq2SeqLM.from_pretrained(mname)
         self.tokenizer = AutoTokenizer.from_pretrained(mname)
 
-    def translate(self,
-                  text):
+    def __call__(self,
+                 text):
         tac = time.time()
 
         as_tensor = self.tokenizer.prepare_seq2seq_batch(src_texts=[text])

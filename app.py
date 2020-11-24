@@ -57,7 +57,7 @@ async def root(token: dict = Depends(authenticate), features: dict = Depends(val
     text_to_translate = features.get("text")
     word_nbr = text_to_translate.split(" ").__len__()
 
-    translation = translator.translate(text_to_translate)
+    translation = translator(text_to_translate)
     translated_text = translation["translation"]
     elapsed_time = translation["elapsed_time"]
 

@@ -14,7 +14,6 @@ dist/
 downloads/
 eggs/
 .eggs/
-lib/
 lib64/
 parts/
 sdist/
@@ -127,3 +126,10 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+/aux-jupyter/
+/.idea/misc.xml
+/.idea/modules.xml
+/.idea/nmt-api.iml
+/.idea/inspectionProfiles/profiles_settings.xml
+/.idea/inspectionProfiles/Project_Default.xml
+/.idea/vcs.xml

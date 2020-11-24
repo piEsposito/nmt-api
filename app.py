@@ -66,7 +66,8 @@ async def root(token: dict = Depends(authenticate), features: dict = Depends(val
         status_code=200,
         content={"translation": translated_text,
                  "compute_time": elapsed_time,
-                 "words_to_translate_nbr": word_nbr}
+                 "words_to_translate_nbr": word_nbr,
+                 "translated_word_nbr": translated_text.split(" ").__len__()}
     )
 
 

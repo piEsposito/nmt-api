@@ -6,6 +6,8 @@ COPY . .
 
 RUN ["pip", "install", "-r", "requirements.txt", "--no-cache-dir"]
 
+#instances wanted model so it is cached for docker runs
+
 RUN ["python", "aux/download_nmt_model.py"]
 
 EXPOSE 8000

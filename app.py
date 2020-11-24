@@ -73,17 +73,17 @@ async def health_check():
     )
 
 
-@app.exception_handler(Exception)
-async def handle_exception(*args):
-    return JSONResponse(
-        status_code=500,
-        content={"error": "Internal error"}
-    )
-
-
 @app.exception_handler(HTTPException)
 async def http_exception_handler(request, exc):
     return JSONResponse(
         status_code=exc.status_code,
         content={"error": str(exc.detail)}
+    )
+
+
+@app.exception_handler(Exception)
+async def handle_exception(*args):
+    return JSONResponse(
+        status_code=500,
+        content={"error": "Internal error"}
     )
